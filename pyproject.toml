@@ -11,6 +11,8 @@ packages = [ {include = "api"}  ]
 python = "^3.10"
 fastapi = "^0.65.1"
 uvicorn = {extras = ["standard"], version = "^0.13.4"}
+sqlalchemy = "^1.4.45"
+aiomysql = "^0.1.1"
 
 [build-system]
 requires = ["poetry-core"]

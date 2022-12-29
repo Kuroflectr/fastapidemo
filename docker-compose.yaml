@@ -1,0 +1,22 @@
+version: '3'
+services:
+  demo-app:
+    build: .
+    volumes:
+      - .dockervenv:/src/.venv
+      - .:/src
+    ports:
+      - 8000:8000  # ホストマシンのポート8000を、docker内のポート8000に接続する
+  db:
+    image: mysql:8
+    platform: linux/x86_64
+    container_name: mysql8
+    volumes:
+      - ~/mysql-docker-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 12345
+      MYSQL_DATABASE: mydb
+    ports:
+      - "3306:3306"
+volumes:
+  mysql_data:
