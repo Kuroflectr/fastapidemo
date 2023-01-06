@@ -15,6 +15,7 @@ COPY api /src/api/
 # poetryでライブラリをインストール (pyproject.tomlが既にある場合)
 RUN poetry export --without-hashes --no-interaction --no-ansi -f requirements.txt -o requirements.txt
 RUN pip install --force-reinstall -r requirements.txt
+RUN pip install sqlalchemy
 
 # uvicornのサーバーを立ち上げる
 CMD ["uvicorn", "api.main:app", "--host", "0.0.0.0", "--reload"]
