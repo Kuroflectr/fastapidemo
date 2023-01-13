@@ -4,7 +4,7 @@ version = "0.1.0"
 description = ""
 authors = ["peihsuanlin5566 <jnes40722@gmail.com>"]
 readme = "README.md"
-packages = [ {include = "api"}  ]
+packages = [ {include = "api"}, {include = "api_v2"} ]
 
 
 [tool.poetry.dependencies]
