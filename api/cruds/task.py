@@ -94,7 +94,7 @@ async def delete_task(db: AsyncSession, original: task_model.Task) -> None:
 
     Args:
         db (AsyncSession): data base session
-        original (task_model.Task): result get from "get_task" function
+        original (task_model.Task): data base session
     """
     await db.delete(original)
     await db.commit()
