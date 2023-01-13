@@ -1,7 +1,8 @@
 version: '3'
 services:
   demo-app:
-    build: .
+    build:
+      dockerfile: "./Dockerfile_v2"
     volumes:
       - .dockervenv:/src/.venv
       - .:/src
