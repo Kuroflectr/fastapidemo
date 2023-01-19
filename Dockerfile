@@ -11,6 +11,9 @@ RUN pip install poetry
 COPY pyproject.toml /src/
 COPY poetry.lock /src/
 COPY api /src/api/
+COPY snowflack_config.json /src/
+
+
 
 # poetryでライブラリをインストール (pyproject.tomlが既にある場合)
 RUN poetry export --without-hashes --no-interaction --no-ansi -f requirements.txt -o requirements.txt
