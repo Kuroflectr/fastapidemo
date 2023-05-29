@@ -8,7 +8,13 @@ from api_v2.db import get_db
 router = APIRouter()
 
 
-# read 
+# read
 @router.get("/movies", response_model=List[movie_schema.Movie])
-def list_tasks(db: AsyncSession = Depends(get_db)):
+def list_movies(db: AsyncSession = Depends(get_db)):
     return movie_crud.get_movies(db)
+
+
+# create
+@router.post("/movies", response_model=movie_schema.MovieResponse)
+def create_movies(movie_body: movie_schema.MovieCreate, db: AsyncSession = Depends(get_db)):
+    return movie_crud.create_movies(db, movie_body)
